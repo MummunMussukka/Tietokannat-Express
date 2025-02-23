@@ -6,6 +6,8 @@ var logger = require('morgan');
 var opiskelijaRouter = require('./routes/opiskelija');
 var opintojaksoRouter = require('./routes/opintojakso');
 var arviointiRouter = require('./routes/arviointi');
+var userRouter = require('./routes/user');
+var loginRouter = require('./routes/login');
 
 var app = express();
 
@@ -18,5 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/opiskelija', opiskelijaRouter);
 app.use('/opintojakso', opintojaksoRouter);
 app.use('/arviointi', arviointiRouter);
+app.use('/user', userRouter);
+app.use('/login', loginRouter);
 
 module.exports = app;
